@@ -1,0 +1,83 @@
+#header{
+  position: relative;
+  bottom: 1.8rem;
+  height: 6rem;
+
+  border-radius: 0 0 2rem 2rem;
+
+  background: linear-gradient(50.47deg, #CBE9F3 3.75%, #2EA0C4 89.73%);
+}
+
+.menu-button{
+  display: block;
+  position: relative;
+
+  left: 0.5rem;
+  bottom: 0.8rem;
+  
+}
+
+.ico-menu-button{
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.txt-home{
+  display: block;
+  
+  position: relative;
+  top: 2.75rem;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-generar{
+    position: relative;
+    margin-top: 1em;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    --background: linear-gradient(103.9deg, #CBE9F3 5.67%, #2EA0C4 90.69%);
+
+    --border-radius: 15px 15px 15px 15px;    
+}
+ion-modal {
+    --height: 50%;
+    --width: 90%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+  }
+  
+  ion-modal ion-toolbar {
+    --background: #2EA0C4;
+    --color: white;
+  }
+.img-qr-modal{
+    display: block;
+    position: relative;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 90%;
+    height: auto;
+    mix-blend-mode: exclusion;
+  }
+.item-modal-qr{
+    background: transparent;
+}
+  

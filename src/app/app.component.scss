@@ -1,0 +1,50 @@
+.tittle{
+    position: relative;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 3vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 2.6vh;
+}
+
+.bg-toolbar-docente{
+    background: linear-gradient(50.47deg, #CBE9F3 3.75%, #2EA0C4 89.73%);
+}
+
+.bg-toolbar-alumno{
+    background: linear-gradient(50.47deg, #FFB169 3.75%, #FF7B1C 89.73%);
+}
+
+#toolbar{
+    height: 7vh;
+    border-radius: 0 0 15px 15px;
+
+}
+.txt-menu{
+    text-align: center;
+}
+ion-menu::part(container){
+    top: 32vh ;
+    left: 10vw;
+    border-radius: 2rem;
+}
+ion-menu {
+    --height: 20rem;
+    
+
+    ion-list{
+        background: transparent;
+        // top: 10rem !important;
+    }
+    ion-item{
+        --background: transparent;
+        border-radius: 1.5rem;
+    }
+    ion-label{
+        font-size: 2vh;
+    }
+    backdrop-filter: blur(10px);
+    --webkit-backdrop-filter: blur(10px);
+}

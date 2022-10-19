@@ -1,0 +1,136 @@
+/*#region Docente*/
+
+.header-docente{
+  position: relative;
+  bottom: 1.8rem;
+  height: 6rem;
+
+  border-radius: 0 0 2rem 2rem;
+
+  background: linear-gradient(50.47deg, #CBE9F3 3.75%, #2EA0C4 89.73%);
+}
+
+.btn-qr-docente{
+  display: block;
+
+  position: relative;
+
+  width: 70vw;
+  height: 70vw;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  
+  --background: linear-gradient(134.09deg, #CBE9F3 -29.28%, #2EA0C4 96.75%);;
+  --border-radius: 30px;
+}
+
+.txt-qr-docente{
+  color: #2F9ABC;
+  margin-top: 0.1rem;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 4vh;
+}
+
+/*#endregion*/
+
+/*#region Alumno*/
+
+.header-alumno{
+  position: relative;
+  bottom: 1.8rem;
+  height: 6rem;
+
+  border-radius: 0 0 2rem 2rem;
+
+  background: radial-gradient(102.31% 102.31% at 0% 0%, #FFB169 0%, #FF7B1C 100%);
+}
+
+.btn-qr-alumno{
+  display: block;
+
+  position: relative;
+
+  width: 70vw;
+  height: 70vw;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  --background: radial-gradient(102.31% 102.31% at 0% 0%, #FFB169 0%, #FF7B1C 100%);
+  --border-radius: 30px;
+}
+
+.txt-qr-alumno{
+  color: #FF7B1C;
+  margin-top: 0.1rem;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 4vh;
+}
+
+/*#endregion*/
+
+
+.menu-button{
+  display: block;
+  position: relative;
+
+  left: 0.5rem;
+  bottom: 0.8rem;
+  
+}
+
+.ico-menu-button{
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.txt-home{
+  display: block;
+  
+  position: relative;
+  top: 2.75rem;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.parent-welcome-version{
+  margin-top: 3vh;
+}
+
+.txt-welcome{
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: large;
+}
+
+.txt-version{
+  margin-top: 0;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+}
+
+.img-qr{
+  width: inherit;
+  height: inherit;
+}
+
+.txt-funcion{
+  margin-top: 8vh;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2.7vh;
+}
+

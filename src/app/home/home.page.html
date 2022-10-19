@@ -1,0 +1,21 @@
+<ion-content>
+  <div id="header">
+    <h2 class="txt-home">HOME</h2>
+    <div class="menu-button">
+      <ion-button (click)="app.openMenu()" size="large" fill="clear">
+        <ion-icon class="ico-menu-button" name="grid"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <div class="parent-welcome-version" color="dark">
+    <p class="txt-welcome" color="dark">BIENVENIDO</p>
+    <p class="txt-version" id="version"></p>
+  </div>
+  <ion-button id="qr" (click)="qrButton()">
+    <img src="/assets/qr-code.jpg " class="img-qr">
+  </ion-button>
+  <div>
+    <p class="txt-funcion" id="funcion" color="dark"></p>
+    <p id="txt-qr">QR CLASE</p>
+  </div>
+</ion-content>

@@ -1,0 +1,47 @@
+
+<ion-content>
+  <div id="header">
+    <h2 class="txt-home">GENERAR QR</h2>
+    <div class="menu-button">
+      <ion-button routerLink="/home" size="large" fill="clear">
+        <ion-icon class="ico-menu-button" name="arrow-back"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label >Sección: </ion-label>
+      <ion-input class="input-seccion" type="text" name="seccion" [(ngModel)]="informacion.Seccion" required color="dark"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha: </ion-label>
+      <ion-input class="input-fecha" type="date" name="date" [(ngModel)]="informacion.Fecha" required color="dark"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora Inicio: </ion-label>
+      <ion-input class="input-Hinicio" type="time" name="HraInicio" [(ngModel)]="informacion.HoraInicio" required color="dark"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora Termino: </ion-label>
+      <ion-input class="input-HTermino" type="time" name="HraTermino" [(ngModel)]="informacion.HoraTermino" required color="dark"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" id="open-modal2" expand="block" class="btn-generar" [disabled]="formulario.invalid">
+      Generar
+    </ion-button>
+  </form>
+  <ion-modal #modal trigger="open-modal2">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar class="modal-toolbar">
+          <ion-title>QR Clase ****</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss()"><ion-icon slot="icon-only" name="close"></ion-icon></ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <img class="img-qr-modal" src="/assets/qr-code.jpg">
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
