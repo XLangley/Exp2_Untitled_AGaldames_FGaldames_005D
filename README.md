@@ -3,5 +3,5 @@ App Untitled que permite el registro de asistencia de los alumnos.
 
 Instrucciones:
 1. Instalar Storage 
- npm install --save @ionic/storage
- npm install --save @ionic/storage-angular 
+- npm install --save @ionic/storage
+- npm install --save @ionic/storage-angular 
