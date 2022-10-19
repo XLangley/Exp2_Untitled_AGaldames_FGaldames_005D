@@ -20,6 +20,7 @@ export class LoginDocentePage implements OnInit {
   constructor(
               private toastController: ToastController,
               private alertController: AlertController,
+              private app: AppComponent,
               private NavController: NavController,
               private registroDocente: RegistrarDocenteService,
               private fb: FormBuilder)
@@ -58,6 +59,8 @@ export class LoginDocentePage implements OnInit {
           a = 1;
           console.log('ingresado');
           localStorage.setItem('ingresado','true');
+          this.app.agregarUser(obj.nombreDocente,obj.correoDocente);
+          console.log(this.app.user.nombre);
           this.NavController.navigateRoot('home');
         }
       }

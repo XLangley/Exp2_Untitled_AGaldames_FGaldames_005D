@@ -11,6 +11,12 @@
                 <ion-label>{{ c.name }}</ion-label>
               </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item detail=true (click)="Logout()">
+              <ion-icon slot="start" name="log-out-outline"></ion-icon>
+              <ion-label>CERRAR SESION</ion-label>
+            </ion-item>
+        </ion-menu-toggle>
           <ion-item>
             <ion-icon slot="start" name="invert-mode"></ion-icon>
             <ion-label>APARIENCIA</ion-label>

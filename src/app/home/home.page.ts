@@ -9,6 +9,8 @@ import { AppComponent } from '../app.component';
 })
 export class HomePage implements OnInit{
 
+  username : string;
+
   constructor(private app: AppComponent, private router: Router) {}
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class HomePage implements OnInit{
     const version = document.getElementById('version');
     const txtfuncion = document.getElementById('funcion');
 
+
     if (AppComponent.isAlumno) {
       header?.classList.add('header-alumno');
       btnQR?.classList.add('btn-qr-alumno');
@@ -38,6 +41,10 @@ export class HomePage implements OnInit{
       version!.innerHTML = 'DOCENTE';
       txtfuncion!.innerHTML = 'GENERAR';
     }
+
+    this.username = this.app.user.nombre.toUpperCase();
+    console.log(this.app.user.nombre);
+
   }
 
   qrButton(){
@@ -47,5 +54,6 @@ export class HomePage implements OnInit{
       this.router.navigate(['/generar-qr']);
     }
   }
+
 
 }

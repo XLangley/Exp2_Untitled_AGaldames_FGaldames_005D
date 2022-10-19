@@ -5,6 +5,8 @@ import { AlertController, NavController,ToastController } from '@ionic/angular';
 import { RegistrarAlumnoService, Estudiante } from '../services/registrar-alumno.service';
 import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-login-alumno',
   templateUrl: './login-alumno.page.html',
@@ -19,6 +21,7 @@ export class LoginAlumnoPage implements OnInit {
 
   constructor(
               private toastController: ToastController,
+              private app : AppComponent,
               private alertController: AlertController,
               private NavController: NavController,
               private registroEstudiante: RegistrarAlumnoService,
@@ -59,6 +62,8 @@ export class LoginAlumnoPage implements OnInit {
           a = 1;
           console.log('ingresado');
           localStorage.setItem('ingresado','true');
+          this.app.agregarUser(obj.nombreEstudiante,obj.correoEstudiante);
+          console.log(this.app.user.nombre);
           this.NavController.navigateRoot('home');
         }
       }

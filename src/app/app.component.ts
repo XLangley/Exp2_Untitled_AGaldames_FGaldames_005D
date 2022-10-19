@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimationController, Animation, MenuController } from '@ionic/angular';
+import { AnimationController, Animation, MenuController, NavController} from '@ionic/angular';
 
 export const enterAnimation = (baseEl: HTMLElement, opts?: any): Animation => {
   const duration = 300;
@@ -41,9 +41,20 @@ interface Componente{
 })
 
 export class AppComponent implements OnInit{
-  public static isAlumno = true;
   
-  constructor(private menu: MenuController) {}
+  public static isAlumno = true;
+
+  user = {
+    nombre:'',
+    correo:''
+  };
+
+  agregarUser(name, email){
+    this.user.nombre = name;
+    this.user.correo = email;
+  }
+  
+  constructor(private menu: MenuController, private navController : NavController) {}
 
   componentes: Componente[]=[
     {
@@ -55,11 +66,6 @@ export class AppComponent implements OnInit{
       icon:'calendar',
       name: 'HORARIO',
       redirecTo:'/horario'
-    },
-    {
-      icon:'log-out-outline',
-      name: 'CERRAR SESIÓN',
-      redirecTo:'/login-alumno'
     },
   ]
 
@@ -98,6 +104,10 @@ export class AppComponent implements OnInit{
     document.body.classList.toggle('dark', event.detail.checked);
   }
 
+  Logout(){
+    localStorage.setItem('ingresado','false');
+    this.navController.navigateRoot('login-alumno');
+  }
   
   
 }
