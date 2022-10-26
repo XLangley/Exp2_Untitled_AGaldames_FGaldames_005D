@@ -31,7 +31,7 @@ ion-menu::part(container){
     border-radius: 2rem;
 }
 ion-menu {
-    --height: 20rem;
+    --height: 23rem;
     
 
     ion-list{
@@ -48,3 +48,4 @@ ion-menu {
     backdrop-filter: blur(10px);
     --webkit-backdrop-filter: blur(10px);
 }
+

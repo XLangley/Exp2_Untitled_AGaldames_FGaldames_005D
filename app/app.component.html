@@ -1,0 +1,43 @@
+<ion-app>
+  <ion-menu swipe-gesture="false" contentId="main" menuId="first" side="start" auto-hide="true" (ionWillOpen)="menuWillOpen()" (ionDidClose)="menuClosed()">
+    <ion-content>
+        
+      <div id="toolbar">
+        <h2 class="tittle">MENU</h2>
+      </div>
+        
+      <ion-list lines="full">
+        <ion-menu-toggle ng-controller="ExampleController">
+
+          <ion-item (click)="navigate('home')" detail=true id="INICIO">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>INICIO</ion-label>
+          </ion-item>
+
+          <ion-item (click)="navigate('horario')" detail=true id="HORARIO">
+            <ion-icon slot='start' name='calendar'></ion-icon>
+            <ion-label>HORARIO</ion-label>
+          </ion-item>
+
+          <ion-item (click)="navigate('metro')" detail=true id="METRO">
+            <ion-icon slot='start' name='subway'></ion-icon>
+            <ion-label>METRO RED</ion-label>
+          </ion-item>
+
+          <ion-item detail=true (click)="Logout()">
+            <ion-icon slot="start" name="log-out-outline"></ion-icon>
+            <ion-label>CERRAR SESION</ion-label>
+          </ion-item>
+
+        </ion-menu-toggle>
+        
+        <ion-item>
+          <ion-icon slot="start" name="invert-mode"></ion-icon>
+          <ion-label>APARIENCIA</ion-label>
+          <ion-toggle mode="ios" slot="end" color="dark" (ionChange)="toggleTheme($event)" id="themeToggle"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

@@ -9,8 +9,6 @@ import { AppComponent } from '../app.component';
 })
 export class HomePage implements OnInit{
 
-  username : string;
-
   constructor(private app: AppComponent, private router: Router) {}
 
   ngOnInit(): void {
@@ -32,17 +30,15 @@ export class HomePage implements OnInit{
       header?.classList.add('header-alumno');
       btnQR?.classList.add('btn-qr-alumno');
       txtqr?.classList.add('txt-qr-alumno');
-      version!.innerHTML = 'ALUMNO';
       txtfuncion!.innerHTML = 'ESCANEAR';
     } else {
       header?.classList.add('header-docente');
       btnQR?.classList.add('btn-qr-docente');
       txtqr?.classList.add('txt-qr-docente');
-      version!.innerHTML = 'DOCENTE';
       txtfuncion!.innerHTML = 'GENERAR';
     }
 
-    this.username = this.app.user.nombre.toUpperCase();
+    version!.innerHTML = this.app.user.nombre.toUpperCase();
     console.log(this.app.user.nombre);
 
   }

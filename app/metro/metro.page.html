@@ -1,0 +1,27 @@
+<ion-content>
+  <div id="header-metro">
+    <h2 class="txt-home">METRO RED</h2>
+    <div class="menu-button">
+      <ion-button (click)="app.openMenu()" size="large" fill="clear">
+        <ion-icon class="ico-menu-button" name="grid"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <ion-accordion-group *ngFor="let line of apiMetro;">
+    <ion-accordion toggleIcon="ellipse-outline" id="{{line.id}}" value="{{line.id}}">
+      <ion-item slot="header" id="{{line.id}}">
+        <ion-label>{{line.name}}</ion-label>
+      </ion-item>
+      
+      <div class="ion-padding" slot="content" *ngFor="let station of line.stations">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{station.name}}</ion-col>
+            <ion-col class="status" id="status-{{ station.status }}">{{ estado[station.status] }} <ion-icon name="ellipse"></ion-icon></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

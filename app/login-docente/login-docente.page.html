@@ -1,0 +1,35 @@
+<ion-content>
+  <img src="/assets/logo.png" alt="" class="img-logo">
+  <p class="txt-version">VERSION DOCENTE</p>
+
+
+  <div class="bg-box-login">
+      
+    <div class="bg-ico-login">
+      <img src="/assets/img-user-login.png" alt="" class="img-login">
+    </div>
+    
+    <form [formGroup] = "formularioLogin">
+
+       <ion-input type="email" name="email" formControlName="correo" placeholder="CORREO INSTITUCIONAL" class="input-login" required></ion-input>
+       <ion-input type="password" name="password" formControlName="password" placeholder="CONTRASEÑA" class="input-login" required></ion-input>
+       <ion-button routerLink="/recuperar" expand="block" fill="clear" shape="round" class="boton-recuperar">
+          RECUPERAR CONTRASEÑA
+       </ion-button>
+       <ion-button (click)="ingresar()" expand="block" class="boton-login">
+          INICIAR SESIÓN
+       </ion-button>
+    </form>
+  </div>
+  <div class="parent-change-version">
+    <ion-button class="bg-change-version" routerLink="/login-alumno">
+       <img src="/assets/motarboard.png" class="img-change-version">
+    </ion-button>
+    <p class="txt-change-version txt-cv-top">CAMBIAR A</p>
+    <p class="txt-change-version txt-cv-bottom">ALUMNO</p>
+  </div>
+  
+  <ion-button class="btn-registrarse" routerLink="/registro" fill="clear">
+    ¿No tienes cuenta? Toca aqui
+  </ion-button>
+</ion-content>
