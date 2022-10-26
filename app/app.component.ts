@@ -1,32 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimationController, Animation, MenuController, NavController} from '@ionic/angular';
-
-export const enterAnimation = (baseEl: HTMLElement, opts?: any): Animation => {
-  const duration = 300;
-
-  const animationCtrl = new AnimationController();
-
-  if (opts.direction == 'forward') {
-    return animationCtrl.create()
-    .addElement(opts.enteringEl)
-    .duration(duration)
-    .easing('ease-out')
-    .fromTo('opacity', 0, 1);
-  } else {
-    const animacionRoot = animationCtrl.create()
-    .addElement(opts.enteringEl)
-    .duration(0)
-    .fromTo('opacity', 0, 1);
-    
-    const animacionSalida = animationCtrl.create()
-    .addElement(opts.leavingEl)
-    .duration(duration)
-    .easing('ease-out')
-    .fromTo('opacity', 1, 0);
-
-    return animationCtrl.create().addAnimation([animacionRoot, animacionSalida]);
-  }
-}
+import { MenuController, NavController, AlertController, ToastController, LoadingController} from '@ionic/angular';
 
 interface Componente{
   icon: string;
@@ -44,6 +17,8 @@ export class AppComponent implements OnInit{
   
   public static isAlumno = true;
 
+  public loadingSpinner: any;
+
   user = {
     nombre:'',
     correo:''
@@ -54,39 +29,42 @@ export class AppComponent implements OnInit{
     this.user.correo = email;
   }
   
-  constructor(private menu: MenuController, private navController : NavController) {}
-
-  componentes: Componente[]=[
-    {
-      icon:'home',
-      name: 'INICIO',
-      redirecTo:'/home'
-    },
-    {
-      icon:'calendar',
-      name: 'HORARIO',
-      redirecTo:'/horario'
-    },
-  ]
+  constructor
+  (
+    private menu: MenuController,
+    private navController : NavController,
+    private alertController: AlertController,
+    private toastController: ToastController,
+    private loadingController: LoadingController,
+  ) {}
 
   openMenu() {
     this.menu.open('first');
   }
 
-  checkMenuColor(){
+  //se ejecutan en el HTML
+  menuWillOpen(){
     const toolbar = document.getElementById('toolbar');
+    const item = document.getElementById('HORARIO');
 
     if (AppComponent.isAlumno) {
       toolbar?.classList.add('bg-toolbar-alumno');
+
+      //se agrega item HORARIO que es propio de los estudiantes
+      item!.hidden = false;
+      
     } else {
+      item!.hidden = true;
       toolbar?.classList.add('bg-toolbar-docente');
     }
   }
 
+  //se ejecutan en el HTML
   menuClosed(){
     const toolbar = document.getElementById('toolbar');
     toolbar?.classList.remove('bg-toolbar-alumno');
     toolbar?.classList.remove('bg-toolbar-docente');
+    
   }
 
   
@@ -108,6 +86,58 @@ export class AppComponent implements OnInit{
     localStorage.setItem('ingresado','false');
     this.navController.navigateRoot('login-alumno');
   }
+
+  async alertMsg(message){
+    const alert = await this.alertController.create({
+      header: 'Error...',
+      message: message,
+      cssClass: 'custom-alert',
+      buttons: ['Aceptar'],
+    });
+    await alert.present();
+    return;
+  }
+
+  async showToast(position: 'top' | 'middle' | 'bottom', message:string, duration:number) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: duration,
+      position: position,
+      cssClass: 'custom-toast',
+      buttons: [
+        {
+          text: '⨉',
+          role: 'cancel'
+        }
+      ],
+    });
+
+    await toast.present();
+  }
+
+  
+  async loading(option: 'show' | 'hide'){
+    if (option == 'show') {
+      this.loadingSpinner = await this.loadingController.create({
+        message: 'Espere un momento...',
+        spinner: 'crescent',
+        cssClass: 'custom-loading'
+      });
+  
+      await this.loadingSpinner.present();
+
+    }else{
+      setTimeout(() => {
+        this.loadingSpinner.dismiss();
+      }, 1000);
+    }
+
+  }
+
+  navigate(route:string){
+    this.navController.navigateRoot('/'+route);
+  }
+
   
   
 }

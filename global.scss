@@ -24,3 +24,50 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// CUSTOM ALERT
+ion-alert.custom-alert {
+    .alert-wrapper{
+        border-radius: 1.5rem;
+    }
+    
+    .alert-head{
+        text-align: center;
+    }
+    .alert-message{
+        text-align: center;
+    }
+    .alert-button-group{
+        justify-content: center;
+    }
+    .alert-button{
+        margin-inline-end: 0;
+    }
+}
+
+//CUSTOM TOAST
+ion-toast.custom-toast {
+    --background: rgba(var(--ion-color-light-rgb), 0.9);
+    --color: var(--ion-color-dark);
+    --border-radius: 1rem;
+}
+
+ion-toast.custom-toast::part(message) {
+    font-size: 1rem;
+}
+
+ion-toast.custom-toast::part(button) {
+    font-size: 1.1rem;
+    color: var(--ion-color-dark);
+}
+
+//CUSTOM LOADING
+ion-loading.custom-loading{
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    --spinner-color: white;
+    font-size: 1rem;
+    .loading-wrapper{
+        border-radius: 1rem;
+    }
+}

@@ -1,0 +1,172 @@
+/*#region Docente*/
+
+.header-docente {
+    position: relative;
+    bottom: 1.8rem;
+    height: 6rem;
+
+    border-radius: 0 0 2rem 2rem;
+
+    background: linear-gradient(50.47deg, #CBE9F3 3.75%, #2EA0C4 89.73%);
+}
+
+
+/*#endregion*/
+
+/*#region Alumno*/
+
+.header-alumno {
+    position: relative;
+    bottom: 1.8rem;
+    height: 6rem;
+
+    border-radius: 0 0 2rem 2rem;
+
+    background: radial-gradient(102.31% 102.31% at 0% 0%, #FFB169 0%, #FF7B1C 100%);
+}
+
+/*#endregion*/
+
+
+.menu-button {
+    display: block;
+    position: relative;
+
+    left: 0.5rem;
+    bottom: 0.8rem;
+
+}
+
+.ico-menu-button {
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.txt-home {
+    display: block;
+
+    position: relative;
+    top: 2.75rem;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+ion-accordion {
+    margin: 0 auto;
+    margin-top: .5em;
+}
+
+ion-accordion.accordion-expanding,
+ion-accordion.accordion-expanded {
+    width: calc(100% - 32px);
+
+    margin: 16px auto;
+
+    ion-item[slot="header"]#L1 {
+        --background: linear-gradient(50.47deg, #ec1d25 0%, #bc171f 100%);
+    }
+
+    ion-item[slot="header"]#L2 {
+        --background: linear-gradient(50.47deg, #f8951d 0%, #c67818 100%);
+    }
+
+    ion-item[slot="header"]#L3 {
+        --background: linear-gradient(50.47deg, #984907 0%, #663004 100%);
+    }
+
+    ion-item[slot="header"]#L4 {
+        --background: linear-gradient(50.47deg, #2e3192 0%, #212368 100%);
+    }
+
+    ion-item[slot="header"]#L4A {
+        --background: linear-gradient(50.47deg, #057dbc 0%, #005b89 100%);
+    }
+
+    ion-item[slot="header"]#L5 {
+        --background: linear-gradient(50.47deg, #1b9445 0%, #177f3b 100%);
+    }
+
+    ion-item[slot="header"]#L6 {
+        --background: linear-gradient(50.47deg, #a55daf 0%, #7b4683 100%);
+    }
+}
+
+ion-accordion.accordion-collapsing,
+ion-accordion.accordion-collapsed {
+    
+    ion-item[slot="header"]#L1 {
+        --border-color: #ec1d25;
+    }
+
+    ion-item[slot="header"]#L2 {
+        --border-color: #f8951d;
+    }
+
+    ion-item[slot="header"]#L3 {
+        --border-color: #984907;
+    }
+
+    ion-item[slot="header"]#L4 {
+        --border-color: #2e3192;
+    }
+
+    ion-item[slot="header"]#L4A {
+        --border-color: #057dbc;
+    }
+
+    ion-item[slot="header"]#L5 {
+        --border-color: #1b9445;
+    }
+
+    ion-item[slot="header"]#L6 {
+        --border-color: #a55daf;
+    }
+
+}
+
+ion-accordion.accordion-collapsing ion-item[slot="header"],
+ion-accordion.accordion-collapsed ion-item[slot="header"] {
+    --color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    --border-width: 1px !important;
+
+   
+}
+
+ion-col.status{
+    text-align: end;
+}
+
+ion-col#status-0{
+    color: var(--ion-color-success);
+}
+ion-col#status-1{
+    color: var(--ion-color-warning);
+}
+ion-col#status-2{
+    color: var(--ion-color-danger);
+}
+ion-col#status-3{
+    color: var(--ion-color-tertiary);
+}
+
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+    --color: white;
+    border-radius: 15px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ion-padding {
+    border: black;
+}

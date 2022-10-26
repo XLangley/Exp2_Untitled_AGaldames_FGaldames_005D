@@ -1,0 +1,27 @@
+<ion-content id="ion-content">
+  <img src="/assets/logo.png" alt="" class="img-logo">
+  <p class="txt-version" id="txt-version"></p>
+
+
+  <div class="box-registro">
+    <div id="header">
+      <p class="txt-header"> CREAR CUENTA </p>
+    </div>
+    <div class="body-registro">
+      <form [formGroup] = "formularioRegistro">
+        <ion-input class="input-registro" type="text"     placeholder="NOMBRE" formControlName ="nombre" ></ion-input>
+        <ion-input class="input-registro" type="email"    placeholder="CORREO" formControlName ="correo" ></ion-input>
+        <ion-input class="input-registro" type="password" placeholder="CONTRASEÑA" formControlName ="password" id="pass"></ion-input>
+        <ion-input class="input-registro" type="password" placeholder="REPITA CONTRASEÑA" formControlName ="repass"
+        (ionChange)="checkValid(0)" (ionFocus)="checkValid(0)" (ionBlur)="checkValid(1)" id="repass"></ion-input>
+
+        <ion-button (click)="crearUsuario()" type="submit" id="enviar">
+            REGISTRARSE
+        </ion-button>
+      </form>
+    </div>
+  </div>
+
+  <ion-back-button text="" icon="arrow-undo" id="volver"></ion-back-button>
+
+</ion-content>

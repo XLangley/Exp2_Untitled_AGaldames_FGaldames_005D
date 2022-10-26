@@ -39,7 +39,15 @@ const routes: Routes = [
     path: 'horario',
     loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule),
     canActivate: [IngresadoGuard]
+  },  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'metro',
+    loadChildren: () => import('./metro/metro.module').then( m => m.MetroPageModule)
+  },
+
 ];
 
 @NgModule({

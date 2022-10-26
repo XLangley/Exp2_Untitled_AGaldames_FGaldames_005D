@@ -32,41 +32,8 @@
       <p class="txt-change-version txt-cv-bottom">DOCENTE</p>
    </div>
 
-   <ion-button class="btn-registrarse" id="open-modal1" fill="clear">
-      ¿No tienes cuenta? Crea una.
+   <ion-button class="btn-registrarse" routerLink="/registro" fill="clear">
+      ¿No tienes cuenta? Toca aqui
    </ion-button>
 
-   <ion-modal #modal trigger="open-modal1">
-    <ng-template>
-      <ion-content class="bg-modal">
-         <ion-toolbar>
-            <ion-title>Registro</ion-title>
-            <ion-buttons slot="end">
-              <ion-button color="light" (click)="modal.dismiss()" color="primary">X</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-         <form [formGroup] = "formularioRegistro">
-            <ion-item>
-               <ion-label position = "floating">Nombre: </ion-label>
-               <ion-input type="text" formControlName ="nombre"></ion-input>
-            </ion-item>
-            <ion-item>
-               <ion-label position = "floating">Correo: </ion-label>
-               <ion-input type="email" formControlName ="correo"></ion-input>
-            </ion-item>
-            <ion-item>
-               <ion-label position = "floating">Contraseña: </ion-label>
-               <ion-input type="password" formControlName ="password"></ion-input>
-            </ion-item>
-            <ion-item>
-               <ion-label position = "floating">Confirmar Contraseña: </ion-label>
-               <ion-input type="password" formControlName ="repass"></ion-input>
-            </ion-item>
-            <ion-button (click)="crearEstudiante()" expand="block" fill="clear" shape="round">
-               Registrarse
-            </ion-button>
-         </form>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
 </ion-content>
