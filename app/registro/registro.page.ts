@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 
-import { NavController } from '@ionic/angular';
 import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
 import { RegistrarService, Usuario } from '../services/registrar.service';
@@ -21,7 +20,6 @@ export class RegistroPage implements OnInit {
   constructor
   (
     private app : AppComponent,
-    private navController: NavController,
     private registroUsuario: RegistrarService,
     private fb: FormBuilder
   ) 
@@ -97,10 +95,10 @@ export class RegistroPage implements OnInit {
     
             if (AppComponent.isAlumno) {
               this.app.showToast("bottom", '¡ALUMNO CREADO EXITOSAMENTE!', 2000);
-              this.navController.navigateRoot('login-alumno');
+              this.app.navigate('login-alumno');
             } else {
               this.app.showToast("bottom", '¡DOCENTE CREADO EXITOSAMENTE!', 2000);
-              this.navController.navigateRoot('login-docente');
+              this.app.navigate('login-docente');
             }
           }
         });

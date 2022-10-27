@@ -7,17 +7,23 @@
       </ion-button>
     </div>
   </div>
-  <ion-accordion-group *ngFor="let line of apiMetro;">
-    <ion-accordion toggleIcon="ellipse-outline" id="{{line.id}}" value="{{line.id}}">
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let line of apiMetro;" toggleIcon="caret-down-circle-outline" id="{{line.id}}">
       <ion-item slot="header" id="{{line.id}}">
         <ion-label>{{line.name}}</ion-label>
       </ion-item>
       
-      <div class="ion-padding" slot="content" *ngFor="let station of line.stations">
-        <ion-grid>
+      <div class="ion-padding" slot="content">
+        <ion-grid *ngFor="let station of line.stations">
           <ion-row>
             <ion-col>{{station.name}}</ion-col>
-            <ion-col class="status" id="status-{{ station.status }}">{{ estado[station.status] }} <ion-icon name="ellipse"></ion-icon></ion-col>
+            <div *ngIf="station.is_closed_by_schedule; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <ion-col class="status closed">Cerrado por horario <ion-icon name="alert-circle"></ion-icon></ion-col>
+            </ng-template>
+            <ng-template #elseBlock>
+              <ion-col class="status" id="status-{{ station.status }}">{{ estado[station.status] }} <ion-icon name="ellipse"></ion-icon></ion-col>
+            </ng-template>
           </ion-row>
         </ion-grid>
       </div>

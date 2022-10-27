@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 
-import { NavController } from '@ionic/angular';
 import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
 import { RegistrarService } from '../services/registrar.service';
@@ -18,7 +17,6 @@ export class LoginAlumnoPage implements OnInit {
 
   constructor(
               private app : AppComponent,
-              private NavController: NavController,
               private registroUsuario: RegistrarService,
               private fb: FormBuilder)
               {
@@ -52,7 +50,7 @@ export class LoginAlumnoPage implements OnInit {
           localStorage.setItem('ingresado','true');
           this.app.agregarUser(obj.nombre, obj.correo);
           console.log(this.app.user.nombre);
-          this.NavController.navigateRoot('home');
+          this.app.navigate('home');
           break;
         }
       }

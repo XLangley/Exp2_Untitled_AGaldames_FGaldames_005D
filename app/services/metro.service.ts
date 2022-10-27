@@ -16,6 +16,7 @@ export interface Station{
   name: string;
   id: string;
   status: string;
+  is_closed_by_schedule: boolean;
 }
 
 @Injectable({

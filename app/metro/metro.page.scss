@@ -145,6 +145,10 @@ ion-col.status{
     text-align: end;
 }
 
+ion-col.status.closed{
+    color: var(--ion-color-danger);
+}
+
 ion-col#status-0{
     color: var(--ion-color-success);
 }
