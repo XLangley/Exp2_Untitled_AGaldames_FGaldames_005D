@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { App } from '@capacitor/app';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -18,7 +19,6 @@ export class HomePage implements OnInit{
   }
 
   ionViewWillEnter(){
-    console.log(AppComponent.isAlumno);
     const header = document.getElementById('header');
     const btnQR = document.getElementById('qr');
     const txtqr = document.getElementById('txt-qr');
@@ -26,7 +26,7 @@ export class HomePage implements OnInit{
     const txtfuncion = document.getElementById('funcion');
 
 
-    if (AppComponent.isAlumno) {
+    if (localStorage.getItem('type') == 'true') {
       header?.classList.add('header-alumno');
       btnQR?.classList.add('btn-qr-alumno');
       txtqr?.classList.add('txt-qr-alumno');
@@ -38,13 +38,11 @@ export class HomePage implements OnInit{
       txtfuncion!.innerHTML = 'GENERAR';
     }
 
-    version!.innerHTML = this.app.user.nombre.toUpperCase();
-    console.log(this.app.user.nombre);
-
+    version!.innerHTML = localStorage.getItem('user') == null ? '' : localStorage.getItem('user')?.toUpperCase();
   }
 
   qrButton(){
-    if (AppComponent.isAlumno) {
+    if (localStorage.getItem('type') == 'true') {
       this.router.navigate(['']);
     } else {
       this.router.navigate(['/generar-qr']);

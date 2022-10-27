@@ -32,7 +32,7 @@ export class LoginDocentePage implements OnInit {
   }
 
   ionViewWillEnter() {
-    AppComponent.isAlumno = false;
+    localStorage.setItem('type', 'false');
   }
 
   // LOGIN DOCENTES
@@ -46,12 +46,11 @@ export class LoginDocentePage implements OnInit {
       }
 
       for (let obj of datos){
-        if ((obj.correo == f.correo && obj.pass == f.password) && obj.isAlumno == false){
+        if ((obj.correo == f.correo && obj.pass == f.password) && obj.isAlumno == 'false'){
           a = 1;
           console.log('ingresado');
           localStorage.setItem('ingresado','true');
-          this.app.agregarUser(obj.nombre, obj.correo);
-          console.log(this.app.user.nombre);
+          localStorage.setItem('user', obj.nombre);
           this.app.navigate('home');
         }
       }

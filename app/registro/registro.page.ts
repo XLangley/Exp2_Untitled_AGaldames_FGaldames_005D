@@ -29,7 +29,7 @@ export class RegistroPage implements OnInit {
       'correo': new FormControl("", Validators.required),
       'password': new FormControl("", Validators.required),
       'repass': new FormControl("", Validators.required),
-      'isAlumno': Boolean
+      'isAlumno': String
     });
   }
 
@@ -37,14 +37,13 @@ export class RegistroPage implements OnInit {
   }
   
   ionViewWillEnter() {
-    console.log(AppComponent.isAlumno);
     var bgContent = document.getElementById('ion-content');
     var txtVersion = document.getElementById('txt-version');
     var header = document.getElementById('header');
     var enviar = document.getElementById('enviar');
     var volver = document.getElementById('volver');
 
-    if (AppComponent.isAlumno) {
+    if (localStorage.getItem('type') == 'true') {
       txtVersion!.innerHTML = 'VERSION ESTUDIANTE';
       bgContent?.classList.add("bg-alumno");
       header?.classList.add("header-alumno");
@@ -73,7 +72,7 @@ export class RegistroPage implements OnInit {
         this.newUsuarios.correo   = form.correo,
         this.newUsuarios.pass     = form.password,
         this.newUsuarios.repass   = form.repass,
-        this.newUsuarios.isAlumno = AppComponent.isAlumno,
+        this.newUsuarios.isAlumno = localStorage.getItem('type'),
 
         this.registroUsuario.getDatos().then(datos=>{
           if (datos != null){
@@ -93,7 +92,7 @@ export class RegistroPage implements OnInit {
               // console.log(AppComponent.isAlumno ? 'Estudiante Agregado' : 'Docente Agregado');
             });
     
-            if (AppComponent.isAlumno) {
+            if (localStorage.getItem('type') == 'true') {
               this.app.showToast("bottom", '¡ALUMNO CREADO EXITOSAMENTE!', 2000);
               this.app.navigate('login-alumno');
             } else {

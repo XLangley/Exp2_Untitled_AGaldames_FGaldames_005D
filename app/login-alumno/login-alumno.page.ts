@@ -29,7 +29,7 @@ export class LoginAlumnoPage implements OnInit {
   ngOnInit() {
   }
   ionViewWillEnter() {
-    AppComponent.isAlumno = true;
+    localStorage.setItem('type', 'true');
   }
 
 
@@ -44,12 +44,11 @@ export class LoginAlumnoPage implements OnInit {
       }
 
       for (let obj of datos){
-        if ((obj.correo == f.correo && obj.pass == f.password) && obj.isAlumno == true){
+        if ((obj.correo == f.correo && obj.pass == f.password) && obj.isAlumno == 'true'){
           a = 1;
           console.log('ingresado');
           localStorage.setItem('ingresado','true');
-          this.app.agregarUser(obj.nombre, obj.correo);
-          console.log(this.app.user.nombre);
+          localStorage.setItem('user', obj.nombre);
           this.app.navigate('home');
           break;
         }

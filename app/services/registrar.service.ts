@@ -8,7 +8,7 @@ export interface Usuario{
   correo: string;
   pass: string;
   repass: string;
-  isAlumno: boolean;
+  isAlumno: string;
 }
 
 const USUARIOS_KEY = 'mis-usuarios';

@@ -14,14 +14,13 @@ export class RecuperarPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    console.log(AppComponent.isAlumno);
     var bgContent = document.getElementById('ion-content');
     var txtVersion = document.getElementById('txt-version');
     var header = document.getElementById('header');
     var enviar = document.getElementById('enviar');
     var volver = document.getElementById('volver');
 
-    if (AppComponent.isAlumno) {
+    if (localStorage.getItem('type') == 'true') {
       txtVersion!.innerHTML = 'VERSION ESTUDIANTE';
       bgContent?.classList.add("bg-alumno");
       header?.classList.add("header-alumno");

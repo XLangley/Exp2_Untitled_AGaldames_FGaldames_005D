@@ -37,7 +37,7 @@ export class MetroPage implements OnInit {
     //load Style
     const header = document.getElementById('header-metro');
 
-    if (AppComponent.isAlumno) {
+    if (localStorage.getItem('type') == 'true') {
       header?.classList.add('header-alumno');
     } else {
       header?.classList.add('header-docente');

@@ -15,19 +15,7 @@ interface Componente{
 
 export class AppComponent implements OnInit{
   
-  public static isAlumno = true;
-
   public loadingSpinner: any;
-
-  user = {
-    nombre:'',
-    correo:''
-  };
-
-  agregarUser(name, email){
-    this.user.nombre = name;
-    this.user.correo = email;
-  }
   
   constructor
   (
@@ -47,7 +35,7 @@ export class AppComponent implements OnInit{
     const toolbar = document.getElementById('toolbar');
     const item = document.getElementById('HORARIO');
 
-    if (AppComponent.isAlumno) {
+    if (localStorage.getItem('type') == 'true') {
       toolbar?.classList.add('bg-toolbar-alumno');
 
       //se agrega item HORARIO que es propio de los estudiantes
@@ -84,7 +72,13 @@ export class AppComponent implements OnInit{
 
   Logout(){
     localStorage.setItem('ingresado','false');
-    this.navController.navigateRoot('login-alumno');
+    localStorage.removeItem('user');
+    
+    if (localStorage.getItem('type') == 'true') {
+      this.navigate('login-alumno');
+    }else{
+      this.navigate('login-docente');
+    }
   }
 
   async alertMsg(message){
