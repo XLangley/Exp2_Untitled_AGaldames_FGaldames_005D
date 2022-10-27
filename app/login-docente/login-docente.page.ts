@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 
-import { AlertController, NavController,ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
 import { RegistrarService } from '../services/registrar.service';
@@ -20,7 +20,6 @@ export class LoginDocentePage implements OnInit {
               private toastController: ToastController,
               private alertController: AlertController,
               private app: AppComponent,
-              private NavController: NavController,
               private registroUsuario: RegistrarService,
               private fb: FormBuilder)
               {
@@ -53,7 +52,7 @@ export class LoginDocentePage implements OnInit {
           localStorage.setItem('ingresado','true');
           this.app.agregarUser(obj.nombre, obj.correo);
           console.log(this.app.user.nombre);
-          this.NavController.navigateRoot('home');
+          this.app.navigate('home');
         }
       }
       console.log(a);

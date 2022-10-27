@@ -26,13 +26,12 @@
     text-align: center;
 }
 ion-menu::part(container){
-    top: 32vh ;
-    left: 10vw;
+    top:  calc(50vh - var(--height) / 2);
+    left: calc(50vw - var(--width) / 2);
     border-radius: 2rem;
 }
 ion-menu {
-    --height: 23rem;
-    
+    --height: 21rem;
 
     ion-list{
         background: transparent;
