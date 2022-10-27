@@ -9,11 +9,11 @@
     </div>
     <div class="body-registro">
       <form [formGroup] = "formularioRegistro">
-        <ion-input class="input-registro" type="text"     placeholder="NOMBRE" formControlName ="nombre" ></ion-input>
-        <ion-input class="input-registro" type="email"    placeholder="CORREO" formControlName ="correo" ></ion-input>
-        <ion-input class="input-registro" type="password" placeholder="CONTRASEÑA" formControlName ="password" id="pass"></ion-input>
+        <ion-input class="input-registro" type="text"     placeholder="NOMBRE" formControlName ="nombre"  required></ion-input>
+        <ion-input class="input-registro" type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  placeholder="CORREO" formControlName ="correo" required></ion-input>
+        <ion-input class="input-registro" type="password" placeholder="CONTRASEÑA" formControlName ="password" id="pass" required></ion-input>
         <ion-input class="input-registro" type="password" placeholder="REPITA CONTRASEÑA" formControlName ="repass"
-        (ionChange)="checkValid(0)" (ionFocus)="checkValid(0)" (ionBlur)="checkValid(1)" id="repass"></ion-input>
+        (ionChange)="checkValid(0)" (ionFocus)="checkValid(0)" (ionBlur)="checkValid(1)" id="repass" required></ion-input>
 
         <ion-button (click)="crearUsuario()" type="submit" id="enviar">
             REGISTRARSE
