@@ -65,9 +65,26 @@ ion-toast.custom-toast::part(button) {
 ion-loading.custom-loading{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    --spinner-color: white;
+    --spinner-color: var(--ion-color-dark);
     font-size: 1rem;
     .loading-wrapper{
         border-radius: 1rem;
+    }
+}
+
+
+ion-accordion.accordion-collapsing ion-item[slot="header"],
+ion-accordion.accordion-collapsed ion-item[slot="header"] {
+    
+    ion-icon.ion-accordion-toggle-icon{
+        color: var(--ion-color-dark);
+    }
+
+}
+
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+    ion-icon.ion-accordion-toggle-icon{
+        color: var(--ion-color-light);
     }
 }
